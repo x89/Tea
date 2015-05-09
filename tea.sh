@@ -14,6 +14,6 @@ echo "Have no fear! None! you will be warned when your tea is ready."
 sleep 300  # 5 minutes
 
 mpv $tea_file &>/dev/null || \
-mplayer -nogui $tea_file &>/dev/null\
+mplayer -nogui $tea_file &>/dev/null || \
 vlc -I dummy $tea_file &>/dev/null #  Feel free to add more! 
 
