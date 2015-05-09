@@ -15,5 +15,7 @@ sleep 300  # 5 minutes
 
 mpv $tea_file &>/dev/null || \
 mplayer -nogui $tea_file &>/dev/null || \
-vlc -I dummy $tea_file &>/dev/null #  Feel free to add more! 
+vlc -I dummy $tea_file &>/dev/null || \
+echo "No sound came out? YOUR TEA!!!"
 
+# Feel free to add more players!
