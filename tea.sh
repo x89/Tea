@@ -10,10 +10,20 @@ else
     exit
 fi
 
+tea_time=360 #  6 minutes (as per ISO 3103)
+
+while [ "$1" != "" ]; do
+    if [ "$1" = "-t" ]; then
+        tea_time="$2"
+        echo "You are using a custom wait time: $2"
+    fi
+    shift
+done        
+
 echo "You are using $tea_file."
 echo "Have no fear! None! You will be warned when your tea is ready."
 
-sleep 360 #  6 minutes (as per ISO 3103)
+sleep "$tea_time" 
 
 commandpicker() {
     # Thanks to @moopie - github for this function
