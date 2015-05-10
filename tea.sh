@@ -31,3 +31,5 @@ commandpicker
 $player $tea_file &>/dev/null || \
 echo "We couldn't play your tea file." &>/dev/null
 echo "BUT YOUR TEA IS NOW READY, PUT THE MILK IN NOW!!!!"
+
+command -v wall >/dev/null 2>&1 && wall "tea.sh: Your tea is ready!"
