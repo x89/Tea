@@ -13,7 +13,7 @@ fi
 echo "You are using $tea_file."
 echo "Have no fear! None! You will be warned when your tea is ready."
 
-sleep 360 #  6 minutes (as per ISO 3103)
+sleep 1 #  6 minutes (as per ISO 3103)
 
 commandpicker() {
     # Thanks to @moopie - github for this function
@@ -26,6 +26,8 @@ commandpicker() {
     fi
 }
 
+commandpicker
+
 write_terminal() {
     for u in $(who | grep "^${USER} " | awk '{print $1":"$2}'); do
         a=$(echo "${u}" | cut -d: -f1,1)
@@ -33,8 +35,6 @@ write_terminal() {
         echo $1 |write $a $b
     done
 }
-
-commandpicker
 
 $player $tea_file &>/dev/null || \
 echo "We couldn't play your tea file." &>/dev/null
