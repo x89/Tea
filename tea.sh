@@ -9,7 +9,7 @@ else
 fi
 
 echo "You are using $tea_file."
-echo "Have no fear! None! you will be warned when your tea is ready."
+echo "Have no fear! None! You will be warned when your tea is ready."
 
 sleep 300 #  5 minutes
 
@@ -27,6 +27,5 @@ commandpicker() {
 commandpicker
 
 $player $tea_file &>/dev/null || \
-echo "We couldn't play you tea file." &>/dev/null
+echo "We couldn't play your tea file." &>/dev/null
 echo "BUT YOUR TEA IS NOW READY, PUT THE MILK IN NOW!!!!"
-
