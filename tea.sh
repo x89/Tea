@@ -6,13 +6,14 @@ elif [ -r "tea.mp3" ]; then
     tea_file="tea.mp3"
 else
     echo "EMERGENCY!!! YOU WILL GET NO TEA WARNING"
+    echo "(this is because we couldn't find a sound file for you)"
     exit
 fi
 
 echo "You are using $tea_file."
 echo "Have no fear! None! You will be warned when your tea is ready."
 
-sleep 360 #  6 minutes
+sleep 360 #  6 minutes (as per ISO 3103)
 
 commandpicker() {
     # Thanks to @moopie - github for this function
@@ -21,7 +22,7 @@ commandpicker() {
     elif which mplayer >/dev/null; then
        player="mplayer -nogui"
     elif which vlc >/dev/null; then
-       player="vlc -I dummy"
+       player="vlc -I dummy --play-and-exit"
     fi
 }
 
