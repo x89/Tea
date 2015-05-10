@@ -11,7 +11,7 @@ fi
 echo "You are using $tea_file."
 echo "Have no fear! None! you will be warned when your tea is ready."
 
-sleep 300 #  5 minutes
+sleep 360 #  6 minutes
 
 commandpicker() {
     # Thanks to @moopie - github for this function
