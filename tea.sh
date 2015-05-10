@@ -14,6 +14,7 @@ echo "Have no fear! None! you will be warned when your tea is ready."
 sleep 1  # 5 minutes
 
 commandpicker() {
+    # Thanks to @moopie - github for this function
     if which mpv >/dev/null; then
        player="mpv"
     elif which mplayer >/dev/null; then
@@ -25,4 +26,7 @@ commandpicker() {
 
 commandpicker
 
-$player $tea_file &>/dev/null
+$player $tea_file &>/dev/null || \
+echo "We couldn't play you tea file." &>/dev/null
+echo "BUT YOUR TEA IS NOW READY, PUT THE MILK IN NOW!!!!"
+
