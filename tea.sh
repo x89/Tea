@@ -26,8 +26,19 @@ commandpicker() {
     fi
 }
 
+write_terminal() {
+    for u in $(who | grep "^${USER} " | awk '{print $1":"$2}'); do
+        a=$(echo "${u}" | cut -d: -f1,1)
+        b=$(echo "${u}" | cut -d: -f2,2)
+        echo $1 |write $a $b
+    done
+}
+
 commandpicker
 
 $player $tea_file &>/dev/null || \
 echo "We couldn't play your tea file." &>/dev/null
 echo "BUT YOUR TEA IS NOW READY, PUT THE MILK IN NOW!!!!"
+
+write_terminal "tea.sh: Your tea is ready!"
+
