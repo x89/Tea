@@ -15,19 +15,14 @@ sleep 1  # 5 minutes
 
 commandpicker() {
     if which mpv >/dev/null; then
-       $player = "mpv"
+       player="mpv"
     elif which mplayer >/dev/null; then
-       $player = "mplayer -nogui"
+       player="mplayer -nogui"
     elif which vlc >/dev/null; then
-       $player = "vlc -I dummy"
+       player="vlc -I dummy"
     fi
 }
 
 commandpicker
 
-mpv $tea_file &>/dev/null || \
-mplayer -nogui $tea_file &>/dev/null || \
-vlc -I dummy $tea_file &>/dev/null || \
-echo "No sound came out? YOUR TEA!!!"
-
-# Feel free to add more players!
+$player $tea_file &>/dev/null
