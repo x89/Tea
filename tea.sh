@@ -6,6 +6,7 @@ elif [ -r "tea.mp3" ]; then
     tea_file="tea.mp3"
 else
     echo "EMERGENCY!!! YOU WILL GET NO TEA WARNING"
+    exit
 fi
 
 echo "You are using $tea_file."
