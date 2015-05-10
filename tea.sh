@@ -13,7 +13,7 @@ fi
 echo "You are using $tea_file."
 echo "Have no fear! None! You will be warned when your tea is ready."
 
-sleep 1 #  6 minutes (as per ISO 3103)
+sleep 360 #  6 minutes (as per ISO 3103)
 
 commandpicker() {
     # Thanks to @moopie - github for this function
