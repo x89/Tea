@@ -1,7 +1,5 @@
 #!/bin/sh
 
-
-<<<<<<< HEAD
 tea_time=6m #  6 minutes (as per ISO 3103)
 
 while [ "$1" != "" ]; do
@@ -11,7 +9,7 @@ while [ "$1" != "" ]; do
     fi
     shift
 done        
-=======
+
 PrintUsage(){
 echo "Defaults:"
 echo "Brew 5 minutes with milk"
@@ -23,8 +21,6 @@ echo "-l long brewing tea (i.e. herbal tea)"
 echo "-m without milk"
 echo "-c custom brewing time in seconds"
 echo "-h or --help prints this"
->>>>>>> eb9b01a9123f23fd6f1444b1016f7f077e77066b
-
 exit 1
 }
 
