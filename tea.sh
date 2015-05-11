@@ -10,7 +10,7 @@ else
     exit
 fi
 
-tea_time=360 #  6 minutes (as per ISO 3103)
+tea_time=6m #  6 minutes (as per ISO 3103)
 
 while [ "$1" != "" ]; do
     if [ "$1" = "-t" ]; then
