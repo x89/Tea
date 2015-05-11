@@ -1,10 +1,10 @@
 #!/bin/sh
 
-tea_time=6m #  6 minutes (as per ISO 3103)
+teatime=6m #  6 minutes (as per ISO 3103)
 
 while [ "$1" != "" ]; do
     if [ "$1" = "-t" ]; then
-        tea_time="$2"
+        teatime="$2"
         echo "You are using a custom wait time: $2"
     fi
     shift
@@ -20,7 +20,7 @@ echo "-s short brewing tea (i.e. green tea)"
 echo "-l long brewing tea (i.e. herbal tea)"
 echo "-m without milk"
 echo "-c custom brewing time in seconds"
-echo "-h or --help prints thiS"
+echo "-h or --help prints this"
 }
 
 PrintUsage(){
@@ -59,8 +59,12 @@ commandpicker() {
        player="mplayer -nogui"
     elif which vlc >/dev/null; then
        player="vlc -I dummy --play-and-exit"
+    else
+        echo "We couldn't find a way to output sound when your tea is ready!"
     fi
 }
+
+commandpicker
 
 write_terminal() {
     for u in $(who | grep "^${USER} " | awk '{print $1":"$2}'); do
@@ -80,11 +84,6 @@ else
     echo "(this is because we couldn't find a sound file for you)"
     exit
 fi
-
-commandpicker
-
-# 6 minutes is apparently ISO tea defined tea making time. 360 seconds.
-teatime=3 #60 #  6 minute default tea
 
 echo ""
 while test $# -gt 0
