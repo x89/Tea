@@ -20,7 +20,8 @@ echo "-s short brewing tea (i.e. green tea)"
 echo "-l long brewing tea (i.e. herbal tea)"
 echo "-m without milk"
 echo "-c custom brewing time in seconds"
-echo "-h or --help prints this"
+echo "-h or --help prints thiS"
+}
 
 PrintUsage(){
 echo "Defaults:"
@@ -69,7 +70,6 @@ write_terminal() {
     done
 }
 
-
 # Check for audio files
 if [ -r "tea.flac" ]; then
     tea_file="tea.flac"
@@ -83,7 +83,8 @@ fi
 
 commandpicker
 
-teatime=3 #00 #  5 minute default tea
+# 6 minutes is apparently ISO tea defined tea making time. 360 seconds.
+teatime=3 #60 #  6 minute default tea
 
 echo ""
 while test $# -gt 0
@@ -162,8 +163,6 @@ sleep "$teatime"
 
 $player $tea_file 1>&- 2>&- || \
 echo "We couldn't play your tea file." &>/dev/null
-
-
 
 if [ -z $milk ]; then
     PrintDone
