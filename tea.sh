@@ -11,26 +11,6 @@ elif [ -r "tea.mp3" ]; then
 else
      echo -e "${alert}EMERGENCY!!! YOU WILL GET NO TEA WARNING $clear"
 fi
-while [ "$1" != "" ]; do
-    if [ "$1" = "-t" ]; then
-        teatime="$2"
-        echo "You are using a custom wait time: $2"
-    fi
-    shift
-done        
-
-PrintUsage(){
-echo "Defaults:"
-echo "Brew 5 minutes with milk"
-echo ""
-echo "Options:"
-echo "-t ISO 3103 tea"
-echo "-s short brewing tea (i.e. green tea)"
-echo "-l long brewing tea (i.e. herbal tea)"
-echo "-m without milk"
-echo "-c custom brewing time in seconds"
-echo "-h or --help prints this"
-}
 
 PrintUsage(){
 echo "Defaults:"
@@ -98,26 +78,24 @@ echo ""
 while test $# -gt 0
 do
 case "$1" in
-
     -h)
         teahelp=1
     ;;
     
-
     --help)
         teahelp=1
     ;;
 
     -t)
-        teatime=3 #60
+        teatime="3m"
     ;;
 
     -l)
-        teatime=4 #80
+        teatime="4m"
     ;;
 
     -s)
-        teatime=2 #40
+        teatime="2m"
     ;;
 
     -m)
@@ -127,24 +105,11 @@ case "$1" in
     -c)
         if [ $2 -gt 0 ] 2>/dev/null ; then
             teatime=$2
-            echo $teatime
+            echo "You are using a custom wait time: $2"
         else
             PrintUsage
         fi
-
     ;;
-
-    0)  ;; # to catch any number, todo: move into -c option
-    1)  ;;
-    2)  ;;
-    3)  ;;
-    4)  ;;
-    5)  ;;
-    6)  ;;
-    7)  ;;
-    8)  ;;
-    9)  ;;
-
      
     -*)
         echo "this option does not exist: $1"
@@ -153,7 +118,6 @@ case "$1" in
 
     *)
     ;;
-
 esac
 shift
 done
