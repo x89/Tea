@@ -30,19 +30,6 @@ echo "-l long brewing tea (i.e. herbal tea)"
 echo "-m without milk"
 echo "-c custom brewing time in seconds"
 echo "-h or --help prints this"
-}
-
-PrintUsage(){
-echo "Defaults:"
-echo "Brew 5 minutes with milk"
-echo ""
-echo "Options:"
-echo "-t ISO 3103 tea"
-echo "-s short brewing tea (i.e. green tea)"
-echo "-l long brewing tea (i.e. herbal tea)"
-echo "-m without milk"
-echo "-c custom brewing time in seconds"
-echo "-h or --help prints this"
 exit 1
 }
 
