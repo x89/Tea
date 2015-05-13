@@ -11,13 +11,6 @@ elif [ -r "tea.mp3" ]; then
 else
      echo -e "${alert}EMERGENCY!!! YOU WILL GET NO TEA WARNING $clear"
 fi
-while [ "$1" != "" ]; do
-    if [ "$1" = "-t" ]; then
-        teatime="$2"
-        echo "You are using a custom wait time: $2"
-    fi
-    shift
-done        
 
 PrintUsage(){
 echo "Defaults:"
@@ -114,7 +107,7 @@ case "$1" in
     -c)
         if [ $2 -gt 0 ] 2>/dev/null ; then
             teatime=$2
-            echo $teatime
+            echo "You are using a custom wait time: $2"
         else
             PrintUsage
         fi
