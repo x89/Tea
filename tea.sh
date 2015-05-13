@@ -89,15 +89,15 @@ case "$1" in
     ;;
 
     -t)
-        teatime=3 #60
+        teatime="3m"
     ;;
 
     -l)
-        teatime=4 #80
+        teatime="4m"
     ;;
 
     -s)
-        teatime=2 #40
+        teatime="2m"
     ;;
 
     -m)
