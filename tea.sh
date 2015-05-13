@@ -78,12 +78,10 @@ echo ""
 while test $# -gt 0
 do
 case "$1" in
-
     -h)
         teahelp=1
     ;;
     
-
     --help)
         teahelp=1
     ;;
@@ -111,20 +109,7 @@ case "$1" in
         else
             PrintUsage
         fi
-
     ;;
-
-    0)  ;; # to catch any number, todo: move into -c option
-    1)  ;;
-    2)  ;;
-    3)  ;;
-    4)  ;;
-    5)  ;;
-    6)  ;;
-    7)  ;;
-    8)  ;;
-    9)  ;;
-
      
     -*)
         echo "this option does not exist: $1"
@@ -133,7 +118,6 @@ case "$1" in
 
     *)
     ;;
-
 esac
 shift
 done
