@@ -104,32 +104,25 @@ esac
 shift
 done
 
-if [ ! -z $teahelp ]; then
-    if [ $teahelp -eq 1 ]; then
+if [ ! -z ${teahelp} ]; then
+    if [ ${teahelp} -eq 1 ]; then
         PrintUsage
         exit 1
     fi
 fi
 
-echo "You are using $tea_file."
+echo "You are using ${tea_file}."
 echo "Have no fear! None! You will be warned when your tea is ready."
 sleep "$teatime"
 
-$player $tea_file 1>&- 2>&- || \
-echo "We couldn't play your tea file." &>/dev/null
-
 if [ -z $milk ]; then
     PrintDone
-    echo "BUT YOUR TEA IS NOW READY, PUT THE MILK IN NOW!!!!"
+    echo "YOUR TEA IS NOW READY, PUT THE MILK IN NOW!!!!"
 elif [ ! -z $milk ]; then
     PrintDone
-    echo "BUT YOUR TEA IS NOW READY."
+    echo "YOUR TEA IS NOW READY!"
 fi
 
-write_terminal "tea.sh: Your tea is ready!"
-
-echo -en "$alert"
 $player $tea_file &>/dev/null || \
 echo "We couldn't play your tea file." &>/dev/null
-echo "YOUR TEA IS NOW READY, PUT THE MILK IN NOW!!!!"
-echo -en "$clear"
+
