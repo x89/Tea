@@ -1,15 +1,17 @@
 #!/bin/sh
 
-teatime=6m #  6 minutes (as per ISO 3103)
-alert="\E[31m" # color for alerts (default: red)
-clear="\E[0m" # reset color
+# ISO 3103 defines a 6 minute standard tea brewing time.
+teatime=6m
+
+red="\E[31m" #  Red
+der="\E[0m" #  Clear
 
 if [ -r "tea.flac" ]; then
     tea_file="tea.flac"
 elif [ -r "tea.mp3" ]; then
     tea_file="tea.mp3"
 else
-     echo -e "${alert}EMERGENCY!!! YOU WILL GET NO TEA WARNING $clear"
+     echo -e "${red}EMERGENCY!!! YOU WILL GET NO TEA WARNING.${der}"
 fi
 
 PrintUsage(){
