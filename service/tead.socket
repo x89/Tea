@@ -3,9 +3,9 @@
 Description=Listens for other devices telling the socket that water is poured
 
 [Socket]
-ListenDatagram=33590
+Listen=33590
 MaxConnections=1
-Accept=yes
+Accept=True
 
 [Install]
 WantedBy=sockets.target
