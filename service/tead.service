@@ -1,0 +1,6 @@
+[Unit]
+Description=Tea Daemon, listens for remote clients informing us of tea status.
+
+[Service]
+Type=simple
+ExecStart=/home/%u/Tea/tea.sh
