@@ -42,11 +42,11 @@ echo "  \`-----´   "
 
 commandpicker() {
     # Thanks to @moopie - github for this function
-    if which mpv >/dev/null; then
+    if which mpv >&/dev/null; then
        player="mpv"
-    elif which mplayer >/dev/null; then
+    elif which mplayer >&/dev/null; then
        player="mplayer -nogui"
-    elif which vlc >/dev/null; then
+    elif which vlc >&/dev/null; then
        player="vlc -I dummy --play-and-exit"
     else
         echo "We couldn't find a way to output sound when your tea is ready!"
@@ -81,7 +81,7 @@ case "$1" in
     -h)
         teahelp=1
     ;;
-    
+
     --help)
         teahelp=1
     ;;
@@ -110,7 +110,7 @@ case "$1" in
             PrintUsage
         fi
     ;;
-     
+
     -*)
         echo "this option does not exist: $1"
         teahelp=1
