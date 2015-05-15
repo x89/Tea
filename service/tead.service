@@ -2,5 +2,5 @@
 Description=Tea Daemon, listens for remote clients informing us of tea status.
 
 [Service]
-Type=fork
+Type=oneshot
 ExecStart=/usr/bin/tea
