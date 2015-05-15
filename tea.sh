@@ -57,26 +57,6 @@ commandpicker() {
 
 commandpicker
 
-write_terminal() {
-    for u in $(who | grep "^${USER} " | awk '{print $1":"$2}'); do
-        a=$(echo "${u}" | cut -d: -f1,1)
-        b=$(echo "${u}" | cut -d: -f2,2)
-        echo $1 |write $a $b
-    done
-}
-
-# Check for audio files
-if [ -r "tea.flac" ]; then
-    tea_file="tea.flac"
-elif [ -r "tea.mp3" ]; then
-    tea_file="tea.mp3"
-else
-    echo "EMERGENCY!!! YOU WILL GET NO TEA WARNING"
-    echo "(this is because we couldn't find a sound file for you)"
-    exit
-fi
-
-echo ""
 while test $# -gt 0
 do
 case "$1" in
