@@ -69,15 +69,15 @@ case "$1" in
     ;;
 
     -t)
-        teatime="3m"
+        teatime="180"
     ;;
 
     -l)
-        teatime="4m"
+        teatime="240"
     ;;
 
     -s)
-        teatime="2m"
+        teatime="120"
     ;;
 
     -m)
