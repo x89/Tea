@@ -118,7 +118,7 @@ echo "Have no fear! None! You will be warned when your tea is ready."
 tyme=${teatime}
 while [ ${tyme} -gt 0 ]
 do
-  awk "BEGIN{max=int(10 - ((${tyme} / ${teatime}) * 10)); printf(\"[%s%%] \", max * 10, \"#\"); for(i=0;i<max;i++)printf(\"#\")}"
+  awk "BEGIN{max=10 - ((${tyme} / ${teatime}) * 10); printf(\"[%s%%] \", max * 10, \"#\"); for(i=0;i<max;i++)printf(\"#\")}"
   printf '\r'
   sleep 1
   tyme=`expr ${tyme} - 1`
