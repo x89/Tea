@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # ISO 3103 defines a 6 minute standard tea brewing time.
-teatime=6m
+teatime=360
 
 red="\E[31m" #  Red
 der="\E[0m" #  Clear
@@ -113,7 +113,17 @@ fi
 
 echo "You are using ${tea_file}."
 echo "Have no fear! None! You will be warned when your tea is ready."
-sleep "$teatime"
+
+# Let's hae a wee counter, thanks @dunkyp
+tyme=${teatime}
+while [ ${tyme} -gt 0 ]
+do
+  awk "BEGIN{max=int(10 - ((${tyme} / ${teatime}) * 10)); printf(\"[%s%%] \", max * 10, \"#\"); for(i=0;i<max;i++)printf(\"#\")}"
+  printf '\r'
+  sleep 1
+  tyme=`expr ${tyme} - 1`
+done
+printf "[100%%] ##########\n"
 
 if [ -z $milk ]; then
     PrintDone
