@@ -3,8 +3,8 @@
 # ISO 3103 defines a 6 minute standard tea brewing time.
 teatime=360
 
-red="\E[31m" #  Red
-der="\E[0m" #  Clear
+red="\E[31m" # Red
+der="\E[0m"  # Clear
 
 if [ -r "tea.flac" ]; then
     tea_file="tea.flac"
