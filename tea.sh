@@ -43,12 +43,11 @@ echo "  \`-----´   "
 }
 
 commandpicker() {
-    # Thanks to @moopie - github for this function
-    if which mpv >&/dev/null; then
+    if command -v mpv >/dev/null 2>&1; then
        player="mpv"
-    elif which mplayer >&/dev/null; then
+    elif command -v mplayer >/dev/null 2>&1; then
        player="mplayer -nogui"
-    elif which vlc >&/dev/null; then
+    elif command -v vlc >/dev/null 2>&1; then
        player="vlc -I dummy --play-and-exit"
     else
         echo "We couldn't find a way to output sound when your tea is ready!"
