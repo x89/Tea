@@ -3,15 +3,15 @@
 # ISO 3103 defines a 6 minute standard tea brewing time.
 teatime=360
 
-red="\E[31m" # Red
-der="\E[0m"  # Clear
 
 if [ -r "tea.flac" ]; then
     tea_file="tea.flac"
 elif [ -r "tea.mp3" ]; then
     tea_file="tea.mp3"
 else
-    echo -e "${red}EMERGENCY!!! YOU WILL GET NO TEA WARNING.${der}"
+    red="\033[31m" # Red
+    der="\033[0m"  # Clear
+    printf "${red}EMERGENCY!!! YOU WILL GET NO TEA WARNING.${der}\n"
 fi
 
 PrintUsage(){
@@ -110,7 +110,9 @@ if [ ! -z ${teahelp} ]; then
     fi
 fi
 
-echo "You are using ${tea_file}."
+if [ "$tea_file" ]; then
+    echo "You are using ${tea_file}."
+fi
 echo "Have no fear! None! You will be warned when your tea is ready."
 
 # Let's hae a wee counter, thanks @dunkyp
