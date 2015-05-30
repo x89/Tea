@@ -110,7 +110,7 @@ if [ ! -z ${teahelp} ]; then
     fi
 fi
 
-if [ "$tea_file" ]; then
+if [ ! -z $tea_file ]; then
     echo "You are using ${tea_file}."
 fi
 echo "Have no fear! None! You will be warned when your tea is ready."
