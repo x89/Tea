@@ -11,7 +11,7 @@ if [ -r "tea.flac" ]; then
 elif [ -r "tea.mp3" ]; then
     tea_file="tea.mp3"
 else
-     echo -e "${red}EMERGENCY!!! YOU WILL GET NO TEA WARNING.${der}"
+    echo -e "${red}EMERGENCY!!! YOU WILL GET NO TEA WARNING.${der}"
 fi
 
 PrintUsage(){
