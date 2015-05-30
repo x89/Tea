@@ -120,8 +120,8 @@ tyme=${teatime}
 while [ ${tyme} -gt 0 ]
 do
     awk "BEGIN{max=10 - ((${tyme} / ${teatime}) * 10); printf(\"[%.2f%%] \", max * 10, \"#\"); for(i=0;i<max;i++)printf(\"#\")}"
-    printf '\r'
     sleep 1
+    printf '\r'
     tyme=`expr ${tyme} - 1`
 done
 printf "[100%%] ##########\n"
