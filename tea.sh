@@ -44,11 +44,11 @@ echo "  \`-----´   "
 
 commandpicker() {
     if command -v mpv >/dev/null 2>&1; then
-       player="mpv"
+        player="mpv"
     elif command -v mplayer >/dev/null 2>&1; then
-       player="mplayer -nogui"
+        player="mplayer -nogui"
     elif command -v vlc >/dev/null 2>&1; then
-       player="vlc -I dummy --play-and-exit"
+        player="vlc -I dummy --play-and-exit"
     else
         echo "We couldn't find a way to output sound when your tea is ready!"
     fi
@@ -117,10 +117,10 @@ echo "Have no fear! None! You will be warned when your tea is ready."
 tyme=${teatime}
 while [ ${tyme} -gt 0 ]
 do
-  awk "BEGIN{max=10 - ((${tyme} / ${teatime}) * 10); printf(\"[%.2f%%] \", max * 10, \"#\"); for(i=0;i<max;i++)printf(\"#\")}"
-  printf '\r'
-  sleep 1
-  tyme=`expr ${tyme} - 1`
+    awk "BEGIN{max=10 - ((${tyme} / ${teatime}) * 10); printf(\"[%.2f%%] \", max * 10, \"#\"); for(i=0;i<max;i++)printf(\"#\")}"
+    printf '\r'
+    sleep 1
+    tyme=`expr ${tyme} - 1`
 done
 printf "[100%%] ##########\n"
 
@@ -134,4 +134,3 @@ fi
 
 $player $tea_file &>/dev/null || \
 echo "We couldn't play your tea file." &>/dev/null
-
