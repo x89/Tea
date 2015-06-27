@@ -28,18 +28,21 @@ echo "-h or --help prints this"
 exit 1
 }
 
-PrintDone(){ # JUST SOME ASCII FLUFF
-echo ""
-echo "   {  {     "
-echo "    }  }    "
-echo "  ,{--{-.   "
-echo " (  }    )  "
-echo " |\`-----´|_ "
-echo " |       | \\ "
-echo " |  Tea  | |"
-echo " |       |_/"
-echo " \\       /  "
-echo "  \`-----´   "
+PrintDone(){ # ASCII teacup and libnotify message. 
+    echo ""
+    echo "   {  {     "
+    echo "    }  }    "
+    echo "  ,{--{-.   "
+    echo " (  }    )  "
+    echo " |\`-----´|_ "
+    echo " |       | \\ "
+    echo " |  Tea  | |"
+    echo " |       |_/"
+    echo " \\       /  "
+    echo "  \`-----´   "
+    if [ -f $(which notify-send) ]; then
+        notify-send "Your tea is ready now!";
+    fi
 }
 
 commandpicker() {
