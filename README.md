@@ -1,20 +1,8 @@
 # Tea Reminder
 
 Waits 6 minutes then tells you that your tea is now ready.
+There are more options for other variants of tea! Green tea for example.
 
-## Notices
-* It's incredible how much attention a "tea.sh" script can garner.
+# Arch Linux
 
-=======
-## Alert colors
-The following alert colors are available:
-- \E[30m -> black
-- \E[31m -> red
-- \E[32m -> green
-- \E[33m -> yellow
-- \E[34m -> blue
-- \E[35m -> magenta
-- \E[36m -> cyan
-- \E[37m -> white
-- \E[0m  -> reset to default
-More information: http://www.tldp.org/LDP/abs/html/colorizing.html
+If you're on Arch you can just install via the `tea-git` repository on the AUR.
